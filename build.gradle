@@ -22,6 +22,11 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+
+bootJar {
+    baseName = 'gs-accessing-data-mysql'
+    version =  '0.1.0'
+}
 compileKotlin {
     kotlinOptions {
         freeCompilerArgs = ["-Xjsr305=strict"]
@@ -43,6 +48,9 @@ repositories {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('com.fasterxml.jackson.module:jackson-module-kotlin')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
+    compile('mysql:mysql-connector-java')
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     compile("org.jetbrains.kotlin:kotlin-reflect")
     testCompile('org.springframework.boot:spring-boot-starter-test')
