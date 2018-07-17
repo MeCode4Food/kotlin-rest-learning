@@ -5,16 +5,32 @@ import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
 
-
 @Entity
-data class Journal(
-    val name: String,
-    var email: String
-){
+class Journal{
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
-    var id: Int = 0
+    private var id: Int = 0
 
-    fun getFunnyString(id: Int): String{
-        return id.toString() + " " + this.name + " " + this.email
+    private lateinit var name: String
+    private lateinit var email: String
+
+    fun getId(): Int{
+        return id
     }
+
+    fun setId(id: Int){
+        this.id = id
+    }
+
+    fun setName(name: String){
+        this.name = name
+    }
+
+    fun getEmail(): String {
+        return email
+    }
+
+    fun setEmail(email: String){
+        this.email = email
+    }
+
 }

@@ -3,9 +3,9 @@ package com.example.learningkotlin
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
-@SpringBootApplication
-class WhyIsLearningKotlinSoHardApplication
+@SpringBootApplication()
+class KotlinStarterApplication
 
 fun main(args: Array<String>) {
-    SpringApplication.run(WhyIsLearningKotlinSoHardApplication:: class.java, *args)
+    SpringApplication.run(KotlinStarterApplication:: class.java, *args)
 }

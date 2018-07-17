@@ -14,9 +14,11 @@ class JournalController {
     @GetMapping("/greeting")
     @ResponseBody fun addNewJournal(@RequestParam name: String, @RequestParam email: String): String{
 
-        val journal = Journal(name, email)
+        val journal = Journal()
+        journal.setName(name)
+        journal.setEmail(email)
         journalRepository.save(journal)
-        return "Saved"
+        return "Saved liao"
     }
 
     @GetMapping("/all")
