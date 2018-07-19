@@ -11,14 +11,15 @@ class JournalController {
     @Autowired
     private lateinit var journalRepository: JournalRepository
 
-    @GetMapping("/greeting")
-    @ResponseBody fun addNewJournal(@RequestParam name: String, @RequestParam email: String): String{
+    @PostMapping("/add", consumes = ["application/json"])
+    @ResponseBody fun addNewJournal(@RequestBody reqString: String): String{
 
-        val journal = Journal()
-        journal.setName(name)
-        journal.setEmail(email)
-        journalRepository.save(journal)
-        return "Saved liao"
+        /*val journal = Journal()
+        journal.setTitle(title)
+        journal.setDate("")
+        journal.setContent(journalContent)
+        journalRepository.save(journal)*/
+        return reqString
     }
 
     @GetMapping("/all")
